@@ -33,7 +33,7 @@ section {
       }
     }
 
-    & > .section--content {
+    & > .content {
       padding-left: 5%;
       background: #fff;
       width: 70%;
@@ -46,7 +46,7 @@ section {
         background: #f8f8f8;
       }
 
-      & > .section--content {
+      & > .content {
         background: #fcfcfc;
       }
     }
