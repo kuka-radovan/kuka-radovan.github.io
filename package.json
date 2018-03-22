@@ -1,0 +1,21 @@
+{
+  "author": "Radovan Kuka",
+  "name": "personal_website",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuka-radovan/kuka-radovan.github.io.git"
+  },
+  "description": "Personal website and resume",
+  "devDependencies": {
+    "cssnano": "^3.10.0",
+    "postcss": "^6.0.20",
+    "postcss-cli": "^5.0.0",
+    "postcss-cssnext": "^3.1.0"
+  },
+  "scripts": {
+    "build-css": "postcss --config postcss.config.js --output bundle.css main.css --no-map",
+    "watch": "postcss --config postcss.config.js --output bundle.css main.css --watch"
+  },
+  "homepage": "https://radovankuka.com"
+}
