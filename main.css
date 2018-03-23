@@ -1,3 +1,7 @@
+@custom-media --phone-only (max-width: 599px);
+@custom-media --tablet-portrait-up (min-width: 600px);
+@custom-media --tablet-landscape-and-desktop (min-width: 900px);
+
 :root {
   --primary-text-color: #727272;
   --secondary-text-color: #939393;
@@ -5,38 +9,38 @@
 }
 
 body, html {
+  color: var(--secondary-text-color);
   height: 100%;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  color: var(--secondary-text-color);
+  font-size: 14px;
 }
 
 * {
   box-sizing: border-box;
 }
 
+p {
+  margin: 0;
+}
+
 section {
   & > .container {
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     & > header {
       background: #fbfbfb;
-      width: 30%;
-      text-align: right;
-      padding: 0 5% 0 10%;
-
-      & > .photo {
-        border-radius: 50%;
-        max-width: 100%;
-      }
+      color: var(--primary-text-color);
+      font-weight: 500;
+      padding: 1.7rem;
+      text-transform: uppercase;
     }
 
     & > .content {
-      padding-left: 5%;
       background: #fff;
-      width: 70%;
+      padding: 1.7rem;
     }
   }
 
@@ -55,29 +59,67 @@ section {
 
 .section--header {
   & > .container {
-    height: 100vh;
-
     & > header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      text-align: center;
+      background: #fff;
+
+      & > .photo {
+        border-radius: 50%;
+        max-width: 100%;
+        width: 11rem;
+      }
     }
 
     & > .content {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      text-align: center;
+      padding-top: 0;
 
       & .name {
-        font-size: 4em;
+        font-size: 3rem;
         font-weight: 100;
         text-transform: lowercase;
+        line-height: 3.8rem;
+        margin: 0 0 0.5rem;
 
         & > .surname {
           color: var(--highlighted-text-color);
           font-weight: 500;
+          text-transform: uppercase;
         }
+      }
+
+      & .specialization {
+        font-weight: 100;
+        font-size: 1.1rem;
       }
     }
   }
 }
+
+/* @media (--tablet-landscape-and-desktop) {
+  section {
+    & > .container {
+      flex-direction: row;
+
+      & > header {
+        padding: 0 5% 0 10%;
+        text-align: right;
+        width: 30%;
+      }
+
+      & > .content {
+        padding-left: 5%;
+        width: 70%;
+      }
+    }
+  }
+
+  .section--header {
+    & > .container {
+      height: 100vh;
+    }
+  }
+} */
