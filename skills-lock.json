@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "skills": {
+    "eleventy-nunjucks": {
+      "source": "t4sh/skills4sh",
+      "commit": "0d39c1f8aa6dbd6ad39b68d25ea0a24aeea8fc8d",
+      "sourceType": "github",
+      "skillPath": "skills/eleventy-nunjucks/SKILL.md",
+      "computedHash": "315adad71f3fa66dbe15c7f3753760eb71e7ba6984d95acc4710a284d34c453d"
+    }
+  }
+}

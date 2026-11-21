@@ -1,0 +1,24 @@
+.hero {
+  padding: 8px 8px 0;
+}
+
+.hero__title {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-stretch: 122%;
+  font-size: clamp(34px, 13.5cqw, 138px);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.hero__given-name,
+.hero__family-name {
+  display: block;
+}
+
+/* Outlined first name: text in the background color with an ink stroke. */
+.hero__given-name {
+  color: var(--color-bg);
+  -webkit-text-stroke: clamp(2px, 0.03em, 4px) var(--color-ink);
+}

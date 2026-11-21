@@ -1,0 +1,23 @@
+/* Page shell: outer padding and the main rounded frame with a dot grid. */
+.page {
+  /* Fluid sizes inside the page (cqw) scale with the page width. */
+  container-type: inline-size;
+  padding: clamp(10px, 2vw, 28px);
+}
+
+.frame {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.6cqw, 20px);
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: clamp(12px, 1.8cqw, 22px);
+  border: var(--border-frame) solid var(--color-ink);
+  border-radius: clamp(28px, 3.4cqw, 44px);
+  background-color: var(--color-bg);
+  background-image: radial-gradient(circle at center, var(--color-dot) 1.7px, transparent 2.2px);
+  background-size: 18px 18px;
+}

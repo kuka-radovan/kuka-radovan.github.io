@@ -1,0 +1,32 @@
+# Dependencies (restore: npm ci)
+node_modules/
+
+# Build output (Eleventy)
+_site/
+.cache/
+
+# Agent skills: installed copies (restore: npx skills install).
+# skills-lock.json is committed.
+.agents/
+.claude/skills/
+
+# Local, personal agent settings (shared .claude/settings.json stays tracked)
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp

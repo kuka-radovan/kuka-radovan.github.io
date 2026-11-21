@@ -1,0 +1,70 @@
+{%- set pageTitle = (title + " | " + site.name) if title and title != site.name else site.name -%}
+{%- set pageLang = lang or site.defaultLang -%}
+{%- set pageDescription = description or i18n[pageLang].description -%}
+{%- set canonicalUrl = site.url + page.url -%}
+{%- css "global" %}
+{% include "css/tokens.css" %}
+{% include "css/fonts.css" %}
+{% include "css/base.css" %}
+{% include "css/layout.css" %}
+{% endcss -%}
+<!doctype html>
+<html lang="{{ pageLang }}">
+<head>
+  {#- Order follows head best practice: charset, viewport, title, preloads, styles, then metadata #}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ pageTitle }}</title>
+
+  <link rel="preload" href="/fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <style>{% getBundle "css", "global" %}{% getBundle "css" %}</style>
+
+  {%- if pageDescription %}
+  <meta name="description" content="{{ pageDescription }}">
+  {%- endif %}
+  <meta name="author" content="{{ site.author }}">
+  <link rel="canonical" href="{{ canonicalUrl }}">
+
+  {#- Language versions (each page lists all of them, itself included) #}
+  {%- for code, language in site.languages %}
+  <link rel="alternate" hreflang="{{ code }}" href="{{ site.url + language.url }}">
+  {%- endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ site.url + site.languages[site.defaultLang].url }}">
+  {%- if noindex %}
+  <meta name="robots" content="noindex">
+  {%- endif %}
+
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="{{ site.themeColor }}">
+
+  {#- Open Graph (Facebook, LinkedIn, Slack, …) #}
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ title or site.name }}">
+  {%- if pageDescription %}
+  <meta property="og:description" content="{{ pageDescription }}">
+  {%- endif %}
+  <meta property="og:url" content="{{ canonicalUrl }}">
+  <meta property="og:locale" content="{{ site.languages[pageLang].locale }}">
+  {%- for code, language in site.languages %}{% if code != pageLang %}
+  <meta property="og:locale:alternate" content="{{ language.locale }}">
+  {%- endif %}{% endfor %}
+  {%- if image %}
+  <meta property="og:image" content="{{ site.url + image }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {%- else %}
+  <meta name="twitter:card" content="summary">
+  {%- endif %}
+
+  <link rel="author" type="text/plain" href="/humans.txt">
+</head>
+<body>
+  <div class="page">
+    <div class="frame">
+      <main>
+        {{ content | safe }}
+      </main>
+    </div>
+  </div>
+</body>
+</html>

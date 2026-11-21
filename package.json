@@ -1,0 +1,25 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuka-radovan/kuka-radovan.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/kuka-radovan/kuka-radovan.github.io/issues"
+  },
+  "homepage": "https://github.com/kuka-radovan/kuka-radovan.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8",
+    "@fontsource-variable/archivo": "^5.3.0"
+  }
+}

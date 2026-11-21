@@ -1,0 +1,10 @@
+/* Design tokens: the single source of colors, type and borders. */
+:root {
+  --color-bg: #f6e3cc;
+  --color-ink: #141414;
+  --color-dot: rgb(20 20 20 / 0.16);
+
+  --font-sans: "Archivo Variable", system-ui, sans-serif;
+
+  --border-frame: 4px;
+}

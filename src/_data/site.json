@@ -1,0 +1,13 @@
+{
+  "name": "Radovan Kuka",
+  "givenName": "Radovan",
+  "familyName": "Kuka",
+  "url": "https://radovankuka.com",
+  "author": "Radovan Kuka",
+  "defaultLang": "sk",
+  "languages": {
+    "sk": { "locale": "sk_SK", "url": "/" },
+    "en": { "locale": "en_US", "url": "/en/" }
+  },
+  "themeColor": "#f6e3cc"
+}
